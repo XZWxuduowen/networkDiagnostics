@@ -1,0 +1,4 @@
+# gameNetworkDiagnostics
+
+# required
+libresolv.tbd
