@@ -57,6 +57,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (long)computeDurationSince:(long)uTime;
 
+/**
+ * Calculate timestamp. %Y年%m月%d日%H时%M分%S秒
+ * The technique below is faster than using NSDateFormatter.
+ */
++ (NSString *)getCTimeFormatterWithTimestamp:(NSTimeInterval)timestamp;
+
 #pragma mark - port
 /**
  * 根据地址分析端口号
