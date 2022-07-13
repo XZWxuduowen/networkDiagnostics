@@ -68,7 +68,7 @@ NS_ASSUME_NONNULL_BEGIN
  * 根据地址分析端口号
  * 支持 https://www.baidu.com:443 的端口分析
  */
-+ (NSDictionary *)comparePortAndDomain:(NSString *)domain;
++ (NSDictionary *)comparePortAndDomain:(NSString *)content;
 
 #pragma mark - valid
 /**

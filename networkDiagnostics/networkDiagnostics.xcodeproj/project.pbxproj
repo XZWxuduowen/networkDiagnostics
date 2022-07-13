@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		800C1FDE287EB8FC0097F264 /* libgameNetworkDiagnostics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 800C1FD7287EB8FC0097F264 /* libgameNetworkDiagnostics.a */; };
 		807316DB2860617300A8973E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 807316DA2860617300A8973E /* AppDelegate.m */; };
 		807316E12860617300A8973E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 807316E02860617300A8973E /* ViewController.m */; };
 		807316E42860617300A8973E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807316E22860617300A8973E /* Main.storyboard */; };
@@ -14,11 +15,14 @@
 		807316E92860617600A8973E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 807316E72860617600A8973E /* LaunchScreen.storyboard */; };
 		807316EC2860617600A8973E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 807316EB2860617600A8973E /* main.m */; };
 		807316F4286066F100A8973E /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 807316F3286066F100A8973E /* libresolv.tbd */; };
-		807316FF286066FD00A8973E /* libgameNetworkDiagnostics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 807316F6286066FD00A8973E /* libgameNetworkDiagnostics.a */; };
 		80731701286066FD00A8973E /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 807316FD286066FD00A8973E /* Reachability.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		800C1FD7287EB8FC0097F264 /* libgameNetworkDiagnostics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgameNetworkDiagnostics.a; sourceTree = "<group>"; };
+		800C1FDA287EB8FC0097F264 /* GDLoginfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLoginfo.h; sourceTree = "<group>"; };
+		800C1FDB287EB8FC0097F264 /* GDNetInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetInterface.h; sourceTree = "<group>"; };
+		800C1FDC287EB8FC0097F264 /* GDNetworkAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetworkAddress.h; sourceTree = "<group>"; };
 		807316D62860617300A8973E /* networkDiagnostics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = networkDiagnostics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		807316D92860617300A8973E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		807316DA2860617300A8973E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -30,10 +34,6 @@
 		807316EA2860617600A8973E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		807316EB2860617600A8973E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		807316F3286066F100A8973E /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		807316F6286066FD00A8973E /* libgameNetworkDiagnostics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libgameNetworkDiagnostics.a; sourceTree = "<group>"; };
-		807316F8286066FD00A8973E /* GDLoginfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDLoginfo.h; sourceTree = "<group>"; };
-		807316F9286066FD00A8973E /* GDNetInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetInterface.h; sourceTree = "<group>"; };
-		807316FA286066FD00A8973E /* GDNetworkAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDNetworkAddress.h; sourceTree = "<group>"; };
 		807316FD286066FD00A8973E /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		807316FE286066FD00A8973E /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -44,13 +44,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				807316F4286066F100A8973E /* libresolv.tbd in Frameworks */,
-				807316FF286066FD00A8973E /* libgameNetworkDiagnostics.a in Frameworks */,
+				800C1FDE287EB8FC0097F264 /* libgameNetworkDiagnostics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		800C1FD6287EB8FC0097F264 /* gameNetworkDiagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				800C1FD7287EB8FC0097F264 /* libgameNetworkDiagnostics.a */,
+				800C1FD8287EB8FC0097F264 /* include */,
+			);
+			path = gameNetworkDiagnostics;
+			sourceTree = "<group>";
+		};
+		800C1FD8287EB8FC0097F264 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				800C1FD9287EB8FC0097F264 /* gameNetworkDiagnostics */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		800C1FD9287EB8FC0097F264 /* gameNetworkDiagnostics */ = {
+			isa = PBXGroup;
+			children = (
+				800C1FDA287EB8FC0097F264 /* GDLoginfo.h */,
+				800C1FDB287EB8FC0097F264 /* GDNetInterface.h */,
+				800C1FDC287EB8FC0097F264 /* GDNetworkAddress.h */,
+			);
+			path = gameNetworkDiagnostics;
+			sourceTree = "<group>";
+		};
 		807316CD2860617300A8973E = {
 			isa = PBXGroup;
 			children = (
@@ -71,7 +98,7 @@
 		807316D82860617300A8973E /* networkDiagnostics */ = {
 			isa = PBXGroup;
 			children = (
-				807316F5286066FD00A8973E /* gameNetworkDiagnostics */,
+				800C1FD6287EB8FC0097F264 /* gameNetworkDiagnostics */,
 				807316FC286066FD00A8973E /* Reachability */,
 				807316D92860617300A8973E /* AppDelegate.h */,
 				807316DA2860617300A8973E /* AppDelegate.m */,
@@ -92,25 +119,6 @@
 				807316F3286066F100A8973E /* libresolv.tbd */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		807316F5286066FD00A8973E /* gameNetworkDiagnostics */ = {
-			isa = PBXGroup;
-			children = (
-				807316F6286066FD00A8973E /* libgameNetworkDiagnostics.a */,
-				807316F7286066FD00A8973E /* include */,
-			);
-			path = gameNetworkDiagnostics;
-			sourceTree = "<group>";
-		};
-		807316F7286066FD00A8973E /* include */ = {
-			isa = PBXGroup;
-			children = (
-				807316F8286066FD00A8973E /* GDLoginfo.h */,
-				807316F9286066FD00A8973E /* GDNetInterface.h */,
-				807316FA286066FD00A8973E /* GDNetworkAddress.h */,
-			);
-			path = include;
 			sourceTree = "<group>";
 		};
 		807316FC286066FD00A8973E /* Reachability */ = {
