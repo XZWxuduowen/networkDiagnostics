@@ -12,12 +12,11 @@
 #import "XZWCdnModel.h"
 #import "GDNetworkAddress.h"
 
-#define kASSETCATALOG @"egretPreRes"
-#define kUNZIPDIRECTORY @"egretPreRes/src"
-
 #define kFASTHTTPPORT 80
 #define kFASTHTTPSPORT 443
 #define kFASTTCPCONNECTTIMEOUT 1
+
+static NSString * _Nullable const GDNetInterfaceDir = @"egretGame";
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -173,7 +172,7 @@ typedef void (^GDNetInterfaceCallBack)(GDNetInterface *obj, BOOL isFinish);
  * 删除所有预加载目录的资源
  * fileError = [GDNetInterface deleteFile:@"" andDirectory:nil];
  * 只删除预加载目录的src资源
- * fileError = [GDNetInterface deleteFile:@"" andDirectory:kUNZIPDIRECTORY];
+ * fileError = [GDNetInterface deleteFile:@"" andDirectory:GDNetInterfaceDir];
  * 只删除预加载目录的storagePath文件
  * fileError = [GDNetInterface deleteFile:storagePath andDirectory:nil];
  *
@@ -185,7 +184,7 @@ typedef void (^GDNetInterfaceCallBack)(GDNetInterface *obj, BOOL isFinish);
 + (NSError *)deleteFile:(NSString *)fileName andDirectory:(nullable NSString *)dir;
 
 /**
- * createEgretPreResDirectory 创建预加载文件目录 kASSETCATALOG
+ * createEgretPreResDirectory 创建预加载文件目录 GDNetInterfaceDir
  *
  * @return 错误的情况返回NSError
  */
@@ -262,15 +261,16 @@ typedef void (^GDNetInterfaceCallBack)(GDNetInterface *obj, BOOL isFinish);
 + (NSString *)md5WithFile:(NSString *)path;
 
 /**
- * handleCdnResZipFile:andStoragePath:andServerMd5: 处理cdn资源文件
+ * handleCdnResZipFile:storageName:andUnzipPath:andServerMd5: 处理cdn资源文件
  *
  *  @param originFile 不为空 下载的临时文件
- *  @param storagePath 不为空 需要存放的文件名
+ *  @param storageName 不为空 需要存放的文件名
+ *  @param unzipPath 不为空 需要解压目录的路径
  *  @param smd5 可空 服务端返回的md5
  *
  *  @return 错误的情况返回NSError
  */
-+ (NSError *)handleCdnResZipFile:(NSURL *)originFile andStoragePath:(NSString *)storagePath andServerMd5:(nullable NSString *)smd5;
++ (NSError *)handleCdnResZipFile:(NSURL *)originFile storageName:(NSString *)storageName andUnzipPath:(NSString *)unzipPath andServerMd5:(nullable NSString *)smd5;
 
 /**
  * handleLocalZip: 分析是否需要是用本地的zip的解压文件
