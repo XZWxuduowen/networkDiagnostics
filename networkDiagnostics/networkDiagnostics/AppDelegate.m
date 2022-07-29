@@ -141,7 +141,7 @@
                             [log recordStepInfo:@"\n开始Mtr"];
                             GDNetInterface *mtr = [[GDNetInterface alloc] init];
                             [app->_testArr addObject:mtr];
-                            [mtr mtrHost:domain progressHandler:^(GDNetInterface *obj2, BOOL isFinish2) {
+                            [mtr mtrHost:domain needShowRemoteInfo:false progressHandler:^(GDNetInterface *obj2, BOOL isFinish2) {
                                 [log recordStepInfo:obj2.msg];
                                 if (isFinish2) {
                                     [log recordStepInfo:@"Mtr: end\n\n\n开始Dig"];

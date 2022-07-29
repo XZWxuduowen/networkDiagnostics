@@ -57,9 +57,10 @@ typedef void (^GDNetInterfaceCallBack)(GDNetInterface *obj, BOOL isFinish);
 /*
  * 调用Mtr解析指定host
  * @param host 指定域名
+ * @param isRemoteInfo 是否显示远端服务器信息
  * @param handler tracerouter的回调
  */
-- (void)mtrHost:(NSString *)host progressHandler:(GDNetInterfaceCallBack)handler;
+- (void)mtrHost:(NSString *)host needShowRemoteInfo:(BOOL)isRemoteInfo progressHandler:(GDNetInterfaceCallBack)handler;
 - (void)stopMtr;
 
 #pragma mark - Telnet
